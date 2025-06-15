@@ -8,30 +8,23 @@ export const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
     <section className="bg-white px-4 py-8">
       <div className="max-w-md mx-auto text-center">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">
-          Bet on real-world events with smart contracts
+          Coming Soon: Trade Real-World Events
         </h1>
         <p className="text-gray-600 mb-6 leading-relaxed">
-          Faru is your platform for trading event contracts. Predict outcomes, invest smartly, 
-          and profit from your insights.
+          Be the first to access Faru when we launch. Join our waitlist to get early access 
+          to event contract trading and exclusive pre-launch updates.
         </p>
         
-        <div className="relative mb-6">
-          <input
-            type="text"
-            placeholder="search for event contract"
-            className="w-full px-4 py-3 pl-10 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            readOnly
-            onClick={onGetStarted}
-          />
-          <svg 
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </div>
+        <button
+          onClick={onGetStarted}
+          className="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-800 transition-colors mb-4"
+        >
+          Join Waitlist - Get Early Access
+        </button>
+        
+        <p className="text-sm text-gray-500">
+          🚀 Launching soon • 📧 No spam, just updates
+        </p>
       </div>
     </section>
   );

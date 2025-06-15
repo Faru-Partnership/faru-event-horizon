@@ -70,8 +70,8 @@ const Index = () => {
       
       <main className="max-w-md mx-auto px-4 pb-8">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-semibold text-gray-900">Sample smart contracts</h2>
-          <button className="text-gray-600 text-sm">▼</button>
+          <h2 className="text-lg font-semibold text-gray-900">Preview: Sample smart contracts</h2>
+          <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">Coming Soon</span>
         </div>
         
         <div className="space-y-4">
@@ -82,6 +82,18 @@ const Index = () => {
               onBetClick={handleBetClick}
             />
           ))}
+        </div>
+        
+        <div className="mt-8 text-center">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+          >
+            Join Waitlist for Early Access
+          </button>
+          <p className="text-sm text-gray-500 mt-2">
+            Be among the first to trade when we launch
+          </p>
         </div>
       </main>
 

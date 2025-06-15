@@ -16,7 +16,7 @@ interface EventCardProps {
 
 export const EventCard = ({ event, onBetClick }: EventCardProps) => {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow opacity-90">
       <div className="flex items-start space-x-3 mb-4">
         <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100 flex items-center justify-center">
           {event.flag ? (
@@ -30,7 +30,7 @@ export const EventCard = ({ event, onBetClick }: EventCardProps) => {
             {event.title}
           </h3>
           <p className="text-xs text-gray-500">
-            Current price: {event.currentPrice}
+            Preview price: {event.currentPrice}
           </p>
         </div>
       </div>
@@ -51,16 +51,20 @@ export const EventCard = ({ event, onBetClick }: EventCardProps) => {
       <div className="flex space-x-2">
         <button 
           onClick={onBetClick}
-          className="flex-1 bg-gray-900 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+          className="flex-1 bg-gray-700 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
         >
-          Yes
+          Get Early Access
         </button>
         <button 
           onClick={onBetClick}
-          className="flex-1 bg-pink-500 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-pink-600 transition-colors"
+          className="flex-1 bg-pink-400 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-pink-500 transition-colors"
         >
-          No
+          Join Waitlist
         </button>
+      </div>
+      
+      <div className="mt-2 text-center">
+        <p className="text-xs text-gray-400">Coming soon - Preview only</p>
       </div>
     </div>
   );
