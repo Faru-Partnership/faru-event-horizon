@@ -70,7 +70,7 @@ const Index = () => {
       
       <main className="max-w-md mx-auto px-4 pb-8">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-semibold text-gray-900">Trending</h2>
+          <h2 className="text-lg font-semibold text-gray-900">Sample smart contracts</h2>
           <button className="text-gray-600 text-sm">▼</button>
         </div>
         

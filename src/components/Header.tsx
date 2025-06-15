@@ -9,14 +9,11 @@ export const Header = ({ onSignUp }: HeaderProps) => {
       <div className="max-w-md mx-auto flex items-center justify-between">
         <h1 className="text-xl font-bold text-gray-900">Faru</h1>
         <div className="flex items-center space-x-3">
-          <button className="text-gray-600 text-sm font-medium">
-            Sign In
-          </button>
           <button 
             onClick={onSignUp}
             className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
           >
-            Sign Up
+            Join waitlist
           </button>
         </div>
       </div>
