@@ -30,7 +30,7 @@ export const EventCard = ({ event, onBetClick }: EventCardProps) => {
             {event.title}
           </h3>
           <p className="text-xs text-gray-500">
-            Preview price: {event.currentPrice}
+            Market size: {event.currentPrice}
           </p>
         </div>
       </div>
