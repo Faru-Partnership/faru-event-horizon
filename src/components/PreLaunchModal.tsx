@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { X } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface PreLaunchModalProps {
   isOpen: boolean;
@@ -10,17 +11,41 @@ interface PreLaunchModalProps {
 export const PreLaunchModal = ({ isOpen, onClose }: PreLaunchModalProps) => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      console.log("Email submitted:", email);
+    if (!email) return;
+
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const { error: supabaseError } = await supabase
+        .from('email adressess')
+        .insert([
+          { email_addresses: email }
+        ]);
+
+      if (supabaseError) {
+        console.error('Supabase error:', supabaseError);
+        setError('Failed to join waitlist. Please try again.');
+        return;
+      }
+
+      console.log("Email submitted to Supabase:", email);
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
         setEmail("");
         onClose();
       }, 2000);
+    } catch (err) {
+      console.error('Error submitting email:', err);
+      setError('Failed to join waitlist. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -59,14 +84,20 @@ export const PreLaunchModal = ({ isOpen, onClose }: PreLaunchModalProps) => {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter your email"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
+              {error && (
+                <p className="text-red-600 text-sm">{error}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-gray-900 text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                disabled={isSubmitting}
+                className="w-full bg-gray-900 text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Join Waitlist
+                {isSubmitting ? 'Joining...' : 'Join Waitlist'}
               </button>
             </form>
 
