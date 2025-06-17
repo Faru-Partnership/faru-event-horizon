@@ -15,6 +15,20 @@ interface EventCardProps {
 }
 
 export const EventCard = ({ event, onBetClick }: EventCardProps) => {
+  // Calculate prices based on percentages, ensuring total is between $1.01-$1.05
+  const calculatePrices = (yesPercentage: number, noPercentage: number) => {
+    const totalTarget = 1.02 + Math.random() * 0.03; // Random between 1.02-1.05
+    const yesPrice = (yesPercentage / 100) * totalTarget;
+    const noPrice = totalTarget - yesPrice;
+    
+    return {
+      yesPrice: yesPrice.toFixed(2),
+      noPrice: noPrice.toFixed(2)
+    };
+  };
+
+  const { yesPrice, noPrice } = calculatePrices(event.yesPercentage, event.noPercentage);
+
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow opacity-90">
       <div className="flex items-start space-x-3 mb-4">
@@ -53,13 +67,13 @@ export const EventCard = ({ event, onBetClick }: EventCardProps) => {
           onClick={onBetClick}
           className="flex-1 bg-gray-700 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
         >
-          Get Early Access
+          Yes ${yesPrice}
         </button>
         <button 
           onClick={onBetClick}
           className="flex-1 bg-pink-400 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-pink-500 transition-colors"
         >
-          Join Waitlist
+          No ${noPrice}
         </button>
       </div>
       

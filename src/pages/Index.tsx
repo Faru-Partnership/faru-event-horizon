@@ -12,7 +12,7 @@ const Index = () => {
     {
       id: 1,
       title: "Will Rwanda become a dominant player in the AI market?",
-      currentPrice: "₦5,000",
+      currentPrice: "$5,450",
       yesPercentage: 23,
       noPercentage: 77,
       flag: "🇷🇼"
@@ -20,7 +20,7 @@ const Index = () => {
     {
       id: 2,
       title: "Nottingham Forest VS Manchester City",
-      currentPrice: "₦214,567.08",
+      currentPrice: "$214,567",
       yesPercentage: 11,
       noPercentage: 89,
       image: "/lovable-uploads/cb137b1a-1a03-4318-9ccd-37873646223a.png"
@@ -28,7 +28,7 @@ const Index = () => {
     {
       id: 3,
       title: "Will Dollar rise again to ₦1-$2000 before Jul 2nd 2025",
-      currentPrice: "₦150,345.66",
+      currentPrice: "$150,345",
       yesPercentage: 58,
       noPercentage: 42,
       flag: "💵"
@@ -36,7 +36,7 @@ const Index = () => {
     {
       id: 4,
       title: "Will Ghana's agricultural power rise over the coming years due to AI?",
-      currentPrice: "₦3,500",
+      currentPrice: "$8,500",
       yesPercentage: 23,
       noPercentage: 77,
       flag: "🇬🇭"
@@ -44,7 +44,7 @@ const Index = () => {
     {
       id: 5,
       title: "Will Covenant University's vision 2025 come to pass",
-      currentPrice: "₦224,567.08",
+      currentPrice: "$224,567",
       yesPercentage: 11,
       noPercentage: 89,
       image: "/lovable-uploads/cb137b1a-1a03-4318-9ccd-37873646223a.png"
@@ -52,7 +52,7 @@ const Index = () => {
     {
       id: 6,
       title: "Will Europe win aid in peace between Putin and Zelensky",
-      currentPrice: "₦150,345.66",
+      currentPrice: "$150,345",
       yesPercentage: 58,
       noPercentage: 42,
       flag: "🇪🇺"
