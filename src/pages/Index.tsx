@@ -11,7 +11,7 @@ const Index = () => {
   const events = [
     {
       id: 1,
-      title: "Will Rwanda become a dominant player in the AI market?",
+      title: "Will Rwanda have a start-up unicorn by 2026?",
       currentPrice: "$5,450",
       yesPercentage: 23,
       noPercentage: 77,
@@ -19,7 +19,7 @@ const Index = () => {
     },
     {
       id: 2,
-      title: "Nottingham Forest VS Manchester City",
+      title: "Rainfall in Port Harcourt to surpass 20mm in November",
       currentPrice: "$214,567",
       yesPercentage: 11,
       noPercentage: 89,
@@ -27,7 +27,7 @@ const Index = () => {
     },
     {
       id: 3,
-      title: "Will Dollar rise again to ₦1-$2000 before Jul 2nd 2025",
+      title: "Will Dollar rise again to ₦2000-$1 before Dec 2nd 2025",
       currentPrice: "$150,345",
       yesPercentage: 58,
       noPercentage: 42,
@@ -35,7 +35,7 @@ const Index = () => {
     },
     {
       id: 4,
-      title: "Will Ghana's agricultural power rise over the coming years due to AI?",
+      title: "Will Ghana's cocoa production for 2025 surpass 650,000 metric tons?",
       currentPrice: "$8,500",
       yesPercentage: 23,
       noPercentage: 77,
@@ -43,7 +43,7 @@ const Index = () => {
     },
     {
       id: 5,
-      title: "Will Covenant University's vision 2025 come to pass",
+      title: "Covenant University rank in the top 100 universities in the world by 2030",
       currentPrice: "$224,567",
       yesPercentage: 11,
       noPercentage: 89,
@@ -51,11 +51,11 @@ const Index = () => {
     },
     {
       id: 6,
-      title: "Will Europe win aid in peace between Putin and Zelensky",
+      title: "Will the Sudanese civil war end by November 2026?",
       currentPrice: "$150,345",
       yesPercentage: 58,
       noPercentage: 42,
-      flag: "🇪🇺"
+      flag: "🇸🇩"
     }
   ];
 
@@ -64,34 +64,35 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Header onSignUp={() => setIsModalOpen(true)} />
       <HeroSection onGetStarted={() => setIsModalOpen(true)} />
       
-      <main className="max-w-md mx-auto px-4 pb-8">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-semibold text-gray-900">Preview: Sample smart contracts</h2>
-          <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">Coming Soon</span>
+      <main className="max-w-md mx-auto px-4 pb-12">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-xl font-bold text-foreground">Preview: Sample smart contracts</h2>
+          <span className="text-xs bg-accent text-accent-foreground px-3 py-1.5 rounded-full font-semibold">Coming Soon</span>
         </div>
         
-        <div className="space-y-4">
-          {events.map((event) => (
-            <EventCard 
-              key={event.id} 
-              event={event} 
-              onBetClick={handleBetClick}
-            />
+        <div className="space-y-5">
+          {events.map((event, index) => (
+            <div key={event.id} style={{ animationDelay: `${index * 0.1}s` }}>
+              <EventCard 
+                event={event} 
+                onBetClick={handleBetClick}
+              />
+            </div>
           ))}
         </div>
         
-        <div className="mt-8 text-center">
+        <div className="mt-12 text-center animate-fade-in">
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+            className="bg-gradient-primary text-white px-10 py-4 rounded-xl font-semibold hover:scale-[1.02] transition-all duration-200 shadow-elegant mb-4"
           >
             Join Waitlist for Early Access
           </button>
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm text-muted-foreground">
             Be among the first to trade when we launch
           </p>
         </div>

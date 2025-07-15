@@ -30,55 +30,55 @@ export const EventCard = ({ event, onBetClick }: EventCardProps) => {
   const { yesPrice, noPrice } = calculatePrices(event.yesPercentage, event.noPercentage);
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow opacity-90">
-      <div className="flex items-start space-x-3 mb-4">
-        <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100 flex items-center justify-center">
+    <div className="bg-gradient-card rounded-xl border border-border p-5 hover:shadow-card transition-all duration-300 hover:scale-[1.02] animate-slide-up">
+      <div className="flex items-start space-x-4 mb-5">
+        <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 bg-muted flex items-center justify-center shadow-sm">
           {event.flag ? (
             <span className="text-2xl">{event.flag}</span>
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500"></div>
+            <div className="w-full h-full bg-gradient-primary"></div>
           )}
         </div>
         <div className="flex-1">
-          <h3 className="text-sm font-medium text-gray-900 leading-tight mb-2">
+          <h3 className="text-sm font-semibold text-foreground leading-snug mb-2">
             {event.title}
           </h3>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-muted-foreground font-medium">
             Market size: {event.currentPrice}
           </p>
         </div>
       </div>
 
-      <div className="mb-4">
-        <div className="flex items-center justify-between text-xs text-gray-600 mb-2">
-          <span className="font-semibold">{event.yesPercentage}%</span>
-          <span className="font-semibold">{event.noPercentage}%</span>
+      <div className="mb-5">
+        <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
+          <span className="font-bold text-accent">{event.yesPercentage}%</span>
+          <span className="font-bold text-destructive">{event.noPercentage}%</span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-1.5 mb-3">
+        <div className="w-full bg-muted rounded-full h-2 mb-3 overflow-hidden">
           <div 
-            className="bg-blue-500 h-1.5 rounded-full" 
+            className="bg-gradient-to-r from-accent to-accent/80 h-2 rounded-full transition-all duration-500" 
             style={{ width: `${event.yesPercentage}%` }}
           ></div>
         </div>
       </div>
 
-      <div className="flex space-x-2">
+      <div className="flex space-x-3">
         <button 
           onClick={onBetClick}
-          className="flex-1 bg-gray-700 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+          className="flex-1 bg-primary text-primary-foreground py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition-all duration-200 shadow-sm"
         >
           Yes ${yesPrice}
         </button>
         <button 
           onClick={onBetClick}
-          className="flex-1 bg-pink-400 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-pink-500 transition-colors"
+          className="flex-1 bg-destructive text-destructive-foreground py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition-all duration-200 shadow-sm"
         >
           No ${noPrice}
         </button>
       </div>
       
-      <div className="mt-2 text-center">
-        <p className="text-xs text-gray-400">Coming soon - Preview only</p>
+      <div className="mt-3 text-center">
+        <p className="text-xs text-muted-foreground font-medium">Coming soon - Preview only</p>
       </div>
     </div>
   );
