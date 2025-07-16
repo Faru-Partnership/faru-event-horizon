@@ -68,7 +68,7 @@ const Index = () => {
       <Header onSignUp={() => setIsModalOpen(true)} />
       <HeroSection onGetStarted={() => setIsModalOpen(true)} />
       
-      <main className="max-w-md mx-auto px-4 pb-12">
+      <main className="max-w-md mx-auto px-4 pb-24">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-xl font-bold text-foreground">Preview: Sample smart contracts</h2>
           <span className="text-xs bg-accent text-accent-foreground px-3 py-1.5 rounded-full font-semibold">Coming Soon</span>
@@ -85,23 +85,22 @@ const Index = () => {
           ))}
         </div>
         
-        <div className="mt-12 text-center animate-fade-in">
-          <button 
-            onClick={() => setIsModalOpen(true)}
-            className="bg-gradient-primary text-white px-10 py-4 rounded-xl font-semibold hover:scale-[1.02] transition-all duration-200 shadow-elegant mb-4"
-          >
-            Join Waitlist for Early Access
-          </button>
-          <p className="text-sm text-muted-foreground">
-            Be among the first to trade when we launch
-          </p>
-        </div>
       </main>
 
       <PreLaunchModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
       />
+      
+      {/* Floating Join Waitlist Button */}
+      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+        <button 
+          onClick={() => setIsModalOpen(true)}
+          className="bg-gradient-primary text-white px-8 py-3 rounded-full font-semibold hover:scale-[1.02] transition-all duration-200 shadow-elegant"
+        >
+          Join Waitlist
+        </button>
+      </div>
     </div>
   );
 };
