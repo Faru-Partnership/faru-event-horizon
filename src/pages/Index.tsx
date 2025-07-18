@@ -68,6 +68,50 @@ const Index = () => {
       <Header onSignUp={() => setIsModalOpen(true)} />
       <HeroSection onGetStarted={() => setIsModalOpen(true)} />
       
+      {/* Landing Page Copy Sections */}
+      <section className="max-w-4xl mx-auto px-4 py-16 space-y-16">
+        {/* What Are Event Contracts */}
+        <div className="text-center space-y-6">
+          <h2 className="text-3xl font-bold text-foreground">Bet on Real Events, Not Just Stocks</h2>
+          <div className="max-w-3xl mx-auto space-y-4 text-muted-foreground">
+            <p>Event contracts are simple: you buy a contract that pays out if an event happens. Think elections, policy changes, economic indicators, or climate events. If you're right, you profit. If you're wrong, you lose what you paid.</p>
+            <p>Unlike traditional betting, event contracts create real market prices for future events—turning predictions into investable opportunities.</p>
+          </div>
+        </div>
+
+        {/* Why Africa Needs This */}
+        <div className="text-center space-y-6">
+          <h2 className="text-3xl font-bold text-foreground">Hedge Against What Actually Matters</h2>
+          <div className="max-w-3xl mx-auto space-y-4 text-muted-foreground">
+            <p>The events that affect your life aren't traded on Wall Street. They're local elections, policy changes, infrastructure projects, and economic shifts happening right here in Africa.</p>
+            <p>Faru gives you tools to profit from—or protect against—the outcomes that actually impact your business, investments, and daily life.</p>
+          </div>
+        </div>
+
+        {/* Why Faru */}
+        <div className="text-center space-y-8">
+          <h2 className="text-3xl font-bold text-foreground">Built for Africa, By Africans</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-foreground">Local Focus</h3>
+              <p className="text-muted-foreground">We cover events that matter to African communities, not just global markets.</p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-foreground">Regulatory Compliant</h3>
+              <p className="text-muted-foreground">Built to work within African financial regulations and legal frameworks.</p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-foreground">Accessible Design</h3>
+              <p className="text-muted-foreground">Simple interface designed for users at all experience levels.</p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-foreground">Community Driven</h3>
+              <p className="text-muted-foreground">Market suggestions and priorities come from our user community.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <main className="max-w-md mx-auto px-4 pb-24">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-xl font-bold text-foreground">Preview: Sample smart contracts</h2>
