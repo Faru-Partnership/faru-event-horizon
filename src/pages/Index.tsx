@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { EventCard } from "@/components/EventCard";
 import { PreLaunchModal } from "@/components/PreLaunchModal";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -160,6 +161,8 @@ const Index = () => {
           Join Waitlist
         </button>
       </div>
+      
+      <Footer />
     </div>
   );
 };
